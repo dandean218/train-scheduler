@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>CoderBay</title>
+  <title>All Aboard!</title>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -12,6 +12,10 @@
   <!-- Bootstrap CDN-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!--CSS file-->
+  <link rel="stylesheet" href="style.css">
+
 
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -19,72 +23,79 @@
 </head>
 
 <body>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Link to Moment.js -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
   <div class="container">
 
     <br>
 
     <!-- Jumbotron Title -->
-    <div class="jumbotron">
-      <h1 class="text-center">Welcome to CodersBay</h1>
-      <h3 class="text-center">"Where bidders win big."</h3>
+    <div class="container" id="train-header">
+      <p id="train-image"><img src="./assets/train_icon.png" alt="train logo" id="train-logo"></p>
+      <h1 class="text-center" id="app-header-text"><strong>All Aboard: Train Schedules</strong></h1>
     </div>
 
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-xs-6 col-sm-8 col-lg-12">
         <div class="card">
           <div class="card-body">
             <h3 class="text-center">
-              <strong>Today's Sale</strong>: Pure Vegetarian-Based Coding Knowledge (Chewable)</h3>
+              <strong>Local Train Times (Central Standard Time)</strong></h3>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Current Product -->
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-4 col-sm-offset-2">
-                <img class="img-responsive thumbnail center-block" src="http://graphitepublications.com/wp-content/uploads/2015/04/5-Coding-Challenges-to-Help-You-Train-Your-Brain.jpg"
-                  alt="Coding Brain">
-              </div>
-              <div class="col-sm-6">
-                <h3 class="">
-                  <strong>Highest Bidder:</strong>
-                  <span id="highest-bidder"></span>
-                </h3>
-                <h3 class="">
-                  <strong>Current Price:</strong>
-                  <span id="highest-price"></span>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-6 col-sm-8 col-lg-12">
+          <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody id=train-info>
+              </tbody>
+            </table>
       </div>
     </div>
 
-    <!-- Make Your Bid -->
+
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-xs-6 col-sm-8 col-lg-12">
         <div class="card">
           <div class="card-header">
-            Make Your Bid
           </div>
           <div class="card-body">
             <form>
-              <div class="form-group">
-                <label for="bidder-name">Your Name</label>
-                <input class="form-control" id="bidder-name" type="text">
+             <div class="form-group">
+                <label for="train-name">Train Name</label>
+                <input class="form-control" id="addTrainName" type="text">
               </div>
+
               <div class="form-group">
-                <label for="bidder-price">Your Price</label>
-                <input class="form-control" id="bidder-price" type="number">
+                <label for="train-destination">Train Destination</label>
+                <input class="form-control" id="addDestination" type="text">
               </div>
-              <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
+
+              <div class="form-group">
+                <label for="train-freq">Train Frequency in minutes</label>
+                <input class="form-control" id="frequency" type="number">
+              </div>
+
+              <div class="form-group">
+                <label for="train-first-time">First Train Time (in 24 hour time HH:MM)</label>
+                <input class="form-control" id="addTrainTime" type="number">
+              </div>
+              <button class="btn btn-primary" id="train-submit" type="submit">Submit</button>
             </form>
           </div>
         </div>
@@ -95,7 +106,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="logic1.js"></script>
+  <script src="logic.js"></script>
 
 </body>
 

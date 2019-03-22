@@ -1,0 +1,23 @@
+#train-logo{
+    width: 15%;
+    display: inline;
+    float:left;
+    padding-bottom: 15px;
+    margin-left:20px;
+}
+
+
+#app-header-text{
+    margin-right:150px;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif'
+}
+
+#train-header{
+    padding-top: 15px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+#train-submit{
+    background-color: rgb(141, 40, 4);
+}
